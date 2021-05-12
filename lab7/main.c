@@ -17,6 +17,7 @@
  */
 char a;
 int b;
+
 void UARTIntHandler(void);
 void Timer0IntHandler(void);
 
@@ -27,7 +28,6 @@ a = 0;
 
 SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
 while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF));
-//SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
 
 //timer0
 IntMasterEnable();
@@ -64,28 +64,16 @@ while (1){
     a = UARTCharGet(UART0_BASE);
     UARTCharPut(UART0_BASE, a);
     if (a == 'r'){
-        if (b == 2){
-            b = 0;
-        }
-        else {
-            b = 2;
-        }
+        if (b == 2){b = 0;}
+        else {b = 2;}
     }
     else if (a == 'g'){
-        if (b == 8){
-            b = 0;
-        }
-        else {
-            b = 8;
-        }
+        if (b == 8){b = 0;}
+        else {b = 8;}
     }
     else if (a == 'b'){
-        if (b == 4){
-            b = 0;
-        }
-        else {
-            b = 4;
-        }
+        if (b == 4){b = 0;}
+        else {b = 4;}
     }
 
 }
