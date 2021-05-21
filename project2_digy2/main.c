@@ -132,3 +132,6 @@ main(void){
 
     }
 }
+/* los if superiores trabajan de tal manerta que revisan los inteructoes del dip
+  y apaga el puerton de la led verde y prende la roja cuando esta ocupada y cuando esta libre viseversa
+ */
