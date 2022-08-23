@@ -42,7 +42,7 @@ static void IntDefaultHandler(void);
 //*****************************************************************************
 extern void _c_int00(void);
 extern void Timer0IntHandler(void);
-
+extern void Timer1IntHandler(void);
 //*****************************************************************************
 //
 // Linker variable that marks the top of the stack.
@@ -105,7 +105,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // Watchdog timer
     Timer0IntHandler,                       // Timer 0 subtimer A     AQUÍ SE AGREGÓ EL HANDLER DEL TIMER 0
     IntDefaultHandler,                      // Timer 0 subtimer B
-    IntDefaultHandler,                      // Timer 1 subtimer A
+        Timer1IntHandler,// Timer 1 subtimer A
     IntDefaultHandler,                      // Timer 1 subtimer B
     IntDefaultHandler,                      // Timer 2 subtimer A
     IntDefaultHandler,                      // Timer 2 subtimer B
